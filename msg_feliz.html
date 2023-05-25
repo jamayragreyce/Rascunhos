@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mensagens para alegrar seu dia</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Lemon+Jelly&display=swap');
+    
+    body {
+      background: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red); /* Cores do arco-íris */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: 'Lemon Jelly', cursive;
+    }
+    
+    h1 {
+      text-align: center;
+      font-size: 36px;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1>Mensagens para alegrar seu dia</h1>
+
+  <script>
+    var mensagens = [
+      "Você é incrível! Continue brilhando!",
+      "Acredite em si mesmo e conquiste o mundo!",
+      "A alegria está no ar. Aproveite o seu dia!",
+      "Sorria, hoje é um novo começo!",
+      "Você é mais forte do que pensa. Tenha confiança!",
+      "Espalhe o amor e faça alguém sorrir hoje!",
+      "A vida é cheia de possibilidades. Aproveite cada momento!",
+      "Lembre-se: a felicidade está nas pequenas coisas!",
+      "Acredite na magia da vida e ela te surpreenderá!",
+      "A gratidão transforma tudo. Seja grato e seja feliz!"
+    ];
+
+    var resposta = confirm("Como você está se sentindo? Gostaria de ler uma mensagem positiva?");
+
+    if (resposta) {
+      var mensagemSorteada = mensagens[Math.floor(Math.random() * mensagens.length)];
+      alert(mensagemSorteada);
+    } else {
+      alert("Obrigado pela visita! Tenha um ótimo dia!");
+    }
+  </script>
+</body>
+</html>

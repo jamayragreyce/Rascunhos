@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"> <!-- Adiciona a meta tag para definir a codificação -->
+  <title>Verificar Condições Meteorológicas</title>
+  <style>
+    body {
+      background-color: #F2994A; /* Laranja */
+    }
+    
+    h1 {
+      color: #FFFFFF; /* Branco */
+    }
+    
+    .message {
+      color: #333333; /* Cinza escuro */
+    }
+  </style>
+</head>
+<body>
+  <h1>Condições Meteorológicas</h1>
+
+  <script>
+    var resposta = prompt("Como está o tempo? (chovendo, nublado ou ensolarado)");
+
+    if (resposta === "chovendo") {
+      alert("Não se esqueça do guarda-chuva!");
+    } else if (resposta === "nublado") {
+      alert("Parece que o dia está nublado.");
+    } else if (resposta === "ensolarado") {
+      alert("Aproveite o sol!");
+    } else {
+      alert("Opção inválida. Por favor, escolha entre chovendo, nublado ou ensolarado.");
+    }
+  </script>
+</body>
+</html>

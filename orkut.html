@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Orkut - Página Inicial</title>
+    <style>
+        /* Estilos para o cabeçalho */
+        header {
+            background-color: rgb(255, 0, 225);
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Estilos para as postagens */
+        .postagem {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            padding: 10px;
+        }
+
+        .postagem h2 {
+            color: #333;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        .postagem p {
+            color: #666;
+            font-family: Arial, sans-serif;
+            margin: 10px 0;
+        }
+
+        .postagem .autor {
+            color: #999;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+        }
+
+        /* Estilos para o formulário de envio de postagem */
+        #formulario {
+            margin-top: 20px;
+        }
+
+        #formulario textarea {
+            width: 100%;
+            height: 80px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: vertical;
+        }
+
+        #formulario input[type="submit"] {
+            background-color: hsl(309, 100%, 50%);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Orkut</h1>
+    </header>
+
+    <div class="postagem">
+        <h2>Título da Postagem</h2>
+        <p>Conteúdo da postagem...</p>
+        <p class="autor">Postado por: Nome do Autor</p>
+    </div>
+
+    <!-- Adicione mais postagens aqui se desejar -->
+
+    <div id="formulario">
+        <form>
+            <textarea placeholder="Escreva sua postagem"></textarea>
+            <br>
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+
+    <script>
+        // Exemplo de código JavaScript para manipulação de formulário
+        const formulario = document.querySelector('form');
+
+        formulario.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const textarea = this.querySelector('textarea');
+            const conteudo = textarea.value;
+
+            if (conteudo.trim() !== '') {
+                const postagem = document.createElement('div');
+                postagem.className = 'postagem';
+
+                const titulo = document.createElement('h2');
+                titulo.textContent = 'Nova Postagem';
+
+                const paragrafo = document.createElement('p');
+                paragrafo.textContent = conteudo;
+
+                const autor = document.createElement('p');
+                autor.className = 'autor';
+                autor.textContent = 'Postado por: Você';
+
+                postagem.appendChild(titulo);
+                postagem.appendChild(paragrafo);
+                postagem.appendChild(autor);
+
+                const divFormulario = document.getElementById('formulario');
+                divFormulario.insertAdjacentElement('afterend', postagem);
+
+                textarea.value = '';
+            }
+        });
+    </script>
+</body>
+</html>
